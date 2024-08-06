@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsData = [
         { title: "Card 1", details: "More information about card 1." },
         { title: "Card 2", details: "More information about card 2." },
-        { title: "Card 3", details: "More information about card 3." }
+        { title: "Card 3", details: "More information about card 3." },
+        { title: "Card 4", details: "More information about card 4." },
+        { title: "Card 5", details: "More information about card 5." }
     ];
 
     const gridContainer = document.querySelector('.grid-container');
