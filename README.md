@@ -11,8 +11,7 @@ A visually appealing and interactive grid of cards that displays information wit
 - **Smooth Transitions**: Utilizes CSS transitions and animations for smooth interactions.
 
 ## Demo
-
-![Animated Interactive Card Grid Demo](demo.gif)
+<img width="1157" alt="Preview" src="https://github.com/user-attachments/assets/33b5de3d-10e7-42cc-9ef1-ad59ac8434c8">
 
 ## Getting Started
 
