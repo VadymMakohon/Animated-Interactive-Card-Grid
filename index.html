@@ -13,7 +13,7 @@
         <h1>Interactive Card Grid</h1>
         <input type="text" id="search-input" placeholder="Search cards...">
         <button id="filter-favorites">Show Favorites</button>
-        <p id="card-counter">Total Cards: 3</p>
+        <p id="card-counter">Total Cards: 5</p>
     </header>
     <main class="grid-container">
         <!-- Cards will be dynamically inserted here -->
@@ -27,6 +27,10 @@
     </div>
     <template id="card-template">
         <div class="card">
+            <div class="card-actions">
+                <button class="remove-btn">Remove</button>
+                <button class="fav-btn">Favorite</button>
+            </div>
             <div class="card-inner">
                 <div class="card-front">
                     <h2></h2>
@@ -36,10 +40,6 @@
                     <h2>Details</h2>
                     <p></p>
                 </div>
-            </div>
-            <div class="card-actions">
-                <button class="remove-btn">Remove</button>
-                <button class="fav-btn">Favorite</button>
             </div>
         </div>
     </template>
