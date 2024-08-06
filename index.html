@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Interactive Card Grid</h1>
+    </header>
+    <main class="grid-container">
+        <div class="card">
+            <div class="card-front">
+                <h2>Card 1</h2>
+                <p>Click to flip</p>
+            </div>
+            <div class="card-back">
+                <h2>Details</h2>
+                <p>More information about card 1.</p>
+            </div>
+        </div>
+        <!-- Repeat card elements for more cards -->
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Modal Title</h2>
+            <p>Modal content goes here...</p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
