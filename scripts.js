@@ -14,27 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newCard = cardTemplate.cloneNode(true);
         newCard.querySelector('.card-front h2').textContent = data.title;
         newCard.querySelector('.card-back p').textContent = data.details;
-
-        // Create card actions container
-        const cardActions = document.createElement('div');
-        cardActions.classList.add('card-actions');
-
-        // Create remove button
-        const removeButton = document.createElement('button');
-        removeButton.classList.add('remove-btn');
-        removeButton.textContent = 'Remove';
-
-        // Create favorite button
-        const favButton = document.createElement('button');
-        favButton.classList.add('fav-btn');
-        favButton.textContent = 'Favorite';
-
-        cardActions.appendChild(removeButton);
-        cardActions.appendChild(favButton);
-        newCard.querySelector('.card').appendChild(cardActions);
-
         gridContainer.appendChild(newCard);
-        initializeCardActions(newCard, cardActions);
     };
 
     cardsData.forEach(data => {
@@ -46,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('card-counter').textContent = `Total Cards: ${totalCards}`;
     };
 
-    const initializeCardActions = (card, cardActions) => {
+    document.querySelectorAll('.card').forEach(card => {
         card.setAttribute('draggable', true);
 
         card.addEventListener('dragstart', (e) => {
@@ -64,21 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.closest('.grid-container').insertBefore(draggable, e.target.closest('.card'));
         });
 
-        const favButton = cardActions.querySelector('.fav-btn');
+        const favButton = card.querySelector('.fav-btn');
         favButton.addEventListener('click', () => {
-            card.querySelector('.card-inner').classList.toggle('favorite');
+            card.classList.toggle('favorite');
         });
 
-        const removeButton = cardActions.querySelector('.remove-btn');
+        const removeButton = card.querySelector('.remove-btn');
         removeButton.addEventListener('click', () => {
             card.remove();
             updateCardCounter();
         });
 
-        card.querySelector('.card-inner').addEventListener('dblclick', () => {
+        card.addEventListener('dblclick', () => {
             card.querySelector('.card-back').classList.toggle('expanded');
         });
-    };
+    });
 
     const searchInput = document.getElementById('search-input');
 
@@ -98,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterFavoritesButton.addEventListener('click', () => {
         document.querySelectorAll('.card').forEach(card => {
-            if (!card.querySelector('.card-inner').classList.contains('favorite')) {
+            if (!card.classList.contains('favorite')) {
                 card.style.display = 'none';
             } else {
                 card.style.display = 'block';
