@@ -28,83 +28,35 @@ header {
 .card {
     perspective: 1000px;
     position: relative;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    background-color: white;
-}
-
-.card-inner {
-    position: relative;
-    width: 100%;
-    padding: 1rem;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
 }
 
 .card-front, .card-back {
-    position: absolute;
     width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     backface-visibility: hidden;
+    transition: transform 0.6s;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .card-front {
-    background-color: white;
+    transform: rotateY(0deg);
 }
 
 .card-back {
-    background-color: white;
     transform: rotateY(180deg);
 }
 
-.card:hover .card-inner {
-    transform: rotateY(180deg);
+.card:hover .card-front {
+    transform: rotateY(-180deg);
 }
 
-.card-actions {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-    background-color: #f4f4f4;
-    border-bottom: 1px solid #ccc;
-}
-
-.card-actions button {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.card-actions .fav-btn {
-    background-color: #280a82;
-    color: white;
-    border: none;
-}
-
-.card-actions .fav-btn:hover {
-    background-color: #755fe1;
-}
-
-.card-actions .remove-btn {
-    background-color: #e91e63;
-    color: white;
-    border: none;
-}
-
-.card-actions .remove-btn:hover {
-    background-color: #ff5e81;
-}
-
-.card-back.expanded {
-    max-height: none;
-    overflow: visible;
-}
-
-.favorite {
-    border: 2px solid gold;
+.card:hover .card-back {
+    transform: rotateY(0deg);
 }
 
 .modal {
