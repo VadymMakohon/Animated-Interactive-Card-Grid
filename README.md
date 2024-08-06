@@ -41,5 +41,8 @@ To run this project, you will need:
 
 4. **Open `index.html` in your web browser** to see the project in action.
 
-## Project Structure
+# Contributors
+- [Vadym Makohon](https://github.com/VadymMakohon)
 
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
