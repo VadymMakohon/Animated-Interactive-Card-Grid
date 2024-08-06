@@ -27,16 +27,20 @@
     </div>
     <template id="card-template">
         <div class="card">
-            <div class="card-front">
-                <h2></h2>
-                <p>Click to flip</p>
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2></h2>
+                    <p>Click to flip</p>
+                </div>
+                <div class="card-back">
+                    <h2>Details</h2>
+                    <p></p>
+                </div>
             </div>
-            <div class="card-back">
-                <h2>Details</h2>
-                <p></p>
+            <div class="card-actions">
+                <button class="remove-btn">Remove</button>
+                <button class="fav-btn">Favorite</button>
             </div>
-            <button class="remove-btn">Remove</button>
-            <button class="fav-btn">Favorite</button>
         </div>
     </template>
     <script src="scripts.js"></script>
